@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "framer-motion": "^12.40.0",
-    "tailwind": "^4.0.0",
-    "tailwinds": "^0.0.0"
-  }
-}
