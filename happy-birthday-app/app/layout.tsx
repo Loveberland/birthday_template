@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Itim } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "./custom_cursor";
+
+const itim = Itim({
+  weight: "400",
+  subsets: ["thai", "latin"],
+  variable: "--font-itim",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${itim.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   );
 }
