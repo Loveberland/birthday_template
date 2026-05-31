@@ -38,12 +38,6 @@ export default function SurprisePage() {
         transition={{ duration: 0.6, delay: 0.6 }}
       >
         <button
-          onClick={() => router.back()}
-          className="px-6 py-3 rounded-full border-2 border-pink-300 text-pink-400 font-semibold hover:bg-pink-50 transition-colors cursor-pointer"
-        >
-          ย้อนกลับ
-        </button>
-        <button
           onClick={() => router.push("/surprise/mem")}
           className="px-9 py-3 rounded-full bg-pink-400 text-white font-semibold hover:bg-pink-500 transition-colors shadow-md cursor-pointer"
         >

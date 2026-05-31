@@ -207,7 +207,7 @@ export default function MemPage() {
             ย้อนกลับ
           </button>
           <button
-            onClick={() => router.push("/surprise/next")} // ← เปลี่ยน route หน้าต่อไป
+            onClick={() => router.push("/surprise/mem/end")} // ← เปลี่ยน route หน้าต่อไป
             className="px-9 py-3 rounded-full bg-pink-400 text-white font-semibold hover:bg-pink-500 transition-colors shadow-md cursor-pointer"
           >
             ไปต่อ
