@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Itim } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./custom_cursor";
+import FloatingDecorations from "./floating_decorations";
 
 const itim = Itim({
   weight: "400",
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en" className={`${itim.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <CustomCursor />
+        <FloatingDecorations />
         {children}
       </body>
     </html>
