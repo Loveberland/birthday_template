@@ -1,5 +1,5 @@
 "use client";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const DECORATIONS = [
@@ -51,9 +51,23 @@ function FloatingItem({
   );
 }
 
+type Item = {
+  id: number;
+  emoji: string;
+  delay: number;
+  x: number;
+  duration: number;
+  size: number;
+};
+
 export default function FloatingDecorations() {
-  const items = useMemo(
-    () =>
+  // Random values must be generated on the client only. Generating them
+  // during render makes the prerendered HTML differ from the client render,
+  // which causes a hydration mismatch.
+  const [items, setItems] = useState<Item[]>([]);
+
+  useEffect(() => {
+    setItems(
       Array.from({ length: 25 }, (_, i) => ({
         id: i,
         emoji: DECORATIONS[Math.floor(Math.random() * DECORATIONS.length)],
@@ -62,8 +76,8 @@ export default function FloatingDecorations() {
         duration: 8 + Math.random() * 7,
         size: 16 + Math.random() * 24,
       })),
-    [],
-  );
+    );
+  }, []);
 
   return (
     <>
